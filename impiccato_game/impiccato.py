@@ -41,11 +41,11 @@ while n_guess <= max_guess and my_guess != word:
         for i in idx:
             my_guess = my_guess[:i] + my_char + my_guess[i+1:]
 
-        # Modo 2: lista?
-        my_guess_ = list(my_guess)
-        for i in idx:
-            my_guess_[i] = my_char
-        my_guess = ''.join(my_guess_)
+        # # Modo 2: lista?
+        # my_guess_ = list(my_guess)
+        # for i in idx:
+        #     my_guess_[i] = my_char
+        # my_guess = ''.join(my_guess_)
 
     # Se invece non c'è...
     elif my_char not in word:
@@ -57,6 +57,8 @@ while n_guess <= max_guess and my_guess != word:
     # Printo l'avanzamento nell'indovinare la parola
     print(my_guess)
 
-if n_guess == max_guess and my_guess != word:
+if my_guess == word:
+    print("Hai indovinato!!")
+elif n_guess == max_guess and my_guess != word:
     print("I'm sorry, you did not guess the word")
 
